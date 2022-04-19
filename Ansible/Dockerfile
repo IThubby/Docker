@@ -1,19 +1,21 @@
 FROM ubuntu:18.04
 
 RUN apt-get update; \
+    apt install openssh-client; \
     apt-get install -y wget apt-transport-https software-properties-common; \
     wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb; \
     apt-get install ./packages-microsoft-prod.deb; \
     apt-get update; \
-    apt-get install -y apt-utils; \
-    apt-get install -y aptitude; \
-    aptitude update; \
-    aptitude install -y openssh-client; \
-    aptitude install -y python3-pip; \
-    aptitude install -y powershell; \
-    aptitude clean; \
+    add-apt-repository universe; \
+    apt install -y python3-pip; \
+    apt install -y powershell; \
+    pwsh -c "Set-PackageSource -Name PSGallery -Trusted"; \
+    pwsh -c "Install-Module AZ -Scope AllUsers"; \
     apt-get clean
 
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 RUN pip3 install --upgrade pip; \
-    aptitude install -y ansible; \
-    ansible-galaxy collection install azure.azcollection
+    pip3 install "ansible==2.9.12"; \
+    pip3 install ansible[azure]
