@@ -15,5 +15,5 @@ RUN apt-get update; \
     apt-get clean
 
 RUN pip3 install --upgrade pip; \
-    aptitude install -y ansible
+    aptitude install -y ansible; \
     pip3 install ansible[azure]
