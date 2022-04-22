@@ -1,3 +1,4 @@
+
 FROM ubuntu:18.04
 
 RUN apt-get update; \
@@ -18,4 +19,5 @@ ENV LC_ALL C.UTF-8
 
 RUN pip3 install --upgrade pip; \
     pip3 install "ansible==2.9.12"; \
-    pip3 install ansible[azure]
+    pip3 install ansible[azure]; \
+    pip3 install ansible-link
