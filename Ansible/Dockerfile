@@ -12,6 +12,7 @@ RUN apt-get update; \
     apt install -y powershell; \
     pwsh -c "Set-PackageSource -Name PSGallery -Trusted"; \
     pwsh -c "Install-Module AZ -Scope AllUsers"; \
+    apt install -y git; \
     apt-get clean
 
 ENV LANG C.UTF-8
@@ -20,4 +21,4 @@ ENV LC_ALL C.UTF-8
 RUN pip3 install --upgrade pip; \
     pip3 install "ansible==2.9.12"; \
     pip3 install ansible[azure]; \
-    pip3 install ansible-link
+    pip3 install ansible-lint
