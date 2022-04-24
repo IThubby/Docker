@@ -2,9 +2,13 @@
 FROM ubuntu:18.04
 
 RUN apt-get update; \
-    apt install openssh-client; \
+    apt install -y openssh-client; \
     apt install -y sshpass; \
-    apt install nano; \
+    apt install -y netcat; \
+    apt install -y net-tools; \
+    apt install -y curl; \
+    apt install -y wget; \
+    apt install -y nano; \
     apt install -y iputils-ping; \
     apt-get install -y wget apt-transport-https software-properties-common; \
     wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb; \
@@ -26,3 +30,5 @@ RUN pip3 install --upgrade pip; \
     pip3 install ansible[azure]; \
     pip3 install pyvmomi; \
     pip3 install ansible-lint
+
+RUN ansible-galaxy collection install community.vmware
