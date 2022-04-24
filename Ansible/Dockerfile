@@ -3,6 +3,7 @@ FROM ubuntu:18.04
 
 RUN apt-get update; \
     apt install openssh-client; \
+    apt install -y iputils-ping; \
     apt-get install -y wget apt-transport-https software-properties-common; \
     wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb; \
     apt-get install ./packages-microsoft-prod.deb; \
@@ -21,4 +22,5 @@ ENV LC_ALL C.UTF-8
 RUN pip3 install --upgrade pip; \
     pip3 install "ansible==2.9.12"; \
     pip3 install ansible[azure]; \
+    pip3 install pyvmomi; \
     pip3 install ansible-lint
