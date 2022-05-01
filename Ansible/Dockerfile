@@ -29,6 +29,7 @@ RUN pip3 install --upgrade pip; \
     pip3 install "ansible==2.9.12"; \
     pip3 install ansible[azure]; \
     pip3 install pyvmomi; \
+    pip3 install pywinrm; \
     pip3 install ansible-lint
 
 RUN ansible-galaxy collection install community.vmware; \
