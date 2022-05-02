@@ -26,7 +26,7 @@ ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
 
 RUN pip3 install --upgrade pip; \
-    pip3 install cryptography==36.0.2; \
+    pip3 install "cryptography==36.0.2"; \
     pip3 install "ansible==2.9.12"; \
     pip3 install ansible[azure]; \
     pip3 install pyvmomi; \
