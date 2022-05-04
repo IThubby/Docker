@@ -34,5 +34,5 @@ RUN pip3 install --upgrade pip; \
     pip3 install pywinrm; \
     pip3 install ansible-lint; \
     ansible-galaxy collection install community.vmware; \
-    ansible-galaxy collection install ansible.windows; \
+    ansible-galaxy collection install community.windows; \
     ansible-galaxy collection install chocolatey.chocolatey
