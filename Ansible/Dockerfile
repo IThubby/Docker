@@ -35,8 +35,7 @@ RUN pip3 install --upgrade pip; \
     pip3 install hvac; \
     pip3 install ansible-lint
 
-RUN    
-    ansible-galaxy collection install community.general; \
+RUN ansible-galaxy collection install community.general; \
     ansible-galaxy collection install community.vmware; \
     ansible-galaxy collection install community.windows; \
     ansible-galaxy collection install community.hashi_vault; \
