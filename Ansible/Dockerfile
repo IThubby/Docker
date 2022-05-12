@@ -32,7 +32,10 @@ RUN pip3 install --upgrade pip; \
     pip3 install ansible[azure]; \
     pip3 install pyvmomi; \
     pip3 install pywinrm; \
+    pip3 install hvac; \
     pip3 install ansible-lint; \
+    ansible-galaxy collection install community.general; \
     ansible-galaxy collection install community.vmware; \
     ansible-galaxy collection install community.windows; \
+    ansible-galaxy collection install community.hashi_vault; \
     ansible-galaxy collection install chocolatey.chocolatey
